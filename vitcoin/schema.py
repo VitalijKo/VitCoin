@@ -1,7 +1,7 @@
 import json
+from marshmallow import Schema, fields, validates_schema, ValidationError
 from hashlib import sha256
 from time import time
-from marshmallow import Schema, fields, validates_schema, ValidationError
 
 
 class Transaction(Schema):

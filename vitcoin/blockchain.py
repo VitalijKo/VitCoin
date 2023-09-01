@@ -1,10 +1,10 @@
 import asyncio
-import json
 import math
+import json
+import structlog
 import random
 from hashlib import sha256
 from time import time
-import structlog
 
 logger = structlog.getLogger('blockchain')
 
@@ -66,7 +66,7 @@ class Blockchain:
 		self.chain.append(block)
 
 	def recalculate_target(self, block_index):
-		if block_index % 10 == 0:
+		if not block_index % 10:
 			expected_timespan = 10 * 10
 
 			actual_timespan = self.chain[-1]['timestamp'] - self.chain[-10]['timestamp']

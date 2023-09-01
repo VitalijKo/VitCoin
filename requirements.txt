@@ -1,0 +1,7 @@
+aiohttp
+marshmallow
+marshmallow_oneofschema
+more_itertools
+nacl
+PyNaCl
+structlog

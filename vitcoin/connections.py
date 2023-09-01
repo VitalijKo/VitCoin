@@ -6,7 +6,7 @@ logger = structlog.getLogger(__name__)
 
 class ConnectionPool:
 	def __init__(self):
-		self.connection_pool = dict()
+		self.connection_pool = {}
 
 	def broadcast(self, message):
 		for user in self.connection_pool:

@@ -1,5 +1,5 @@
 import json
-from time import time
+import time
 from nacl.encoding import HexEncoder
 from nacl.exceptions import BadSignatureError
 from nacl.signing import SigningKey, VerifyKey
@@ -10,7 +10,7 @@ def create_transaction(private_key, public_key, receiver, amount):
 		'sender': public_key,
 		'receiver': receiver,
 		'amount': amount,
-		'timestamp': int(time())
+		'timestamp': int(time.time())
 	}
 
 	tx_bytes = json.dumps(tx, sort_keys=True).encode('ascii')
@@ -37,7 +37,6 @@ def validate_transaction(tx):
 
 	try:
 		verify_key.verify(tx_bytes, signature_bytes)
-
 		return True
 	except BadSignatureError:
 		return False
