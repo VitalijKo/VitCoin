@@ -10,6 +10,7 @@ async def get_external_ip():
 			'user-agent': 'curl/7.83.1'
 		}) as response:
 			response_json = await response.json(content_type=None)
+			
 			ip = response_json['ip']
 
 			logger.info(f'Found external IP: {ip}')

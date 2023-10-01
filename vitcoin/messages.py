@@ -78,15 +78,13 @@ def meta(ip, port, version='vitcoin-0.1'):
 
 
 def create_peers_message(external_ip, external_port, peers):
-    return BaseSchema().dumps(
-        {
-            'meta': meta(external_ip, external_port),
-            'message': {
-                'name': 'peers',
-                'payload': peers
-            }
+    return BaseSchema().dumps({
+        'meta': meta(external_ip, external_port),
+        'message': {
+            'name': 'peers',
+            'payload': peers
         }
-    )
+    })
 
 
 def create_block_message(external_ip, external_port, block):

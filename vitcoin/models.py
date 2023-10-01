@@ -8,7 +8,7 @@ class Block:
         hash,
         previous_hash,
         nonce,
-        timestamp,
+        timestamp
     ):
         self.mined_by = mined_by
         self.transactions = transactions

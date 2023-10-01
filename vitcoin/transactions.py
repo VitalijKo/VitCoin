@@ -37,6 +37,7 @@ def validate_transaction(tx):
 
 	try:
 		verify_key.verify(tx_bytes, signature_bytes)
+		
 		return True
 	except BadSignatureError:
 		return False

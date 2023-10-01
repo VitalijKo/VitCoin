@@ -16,9 +16,7 @@ class Server:
 		self.external_port = None
 
 		if not (blockchain and connection_pool and p2p_protocol):
-			logger.error(
-				"All of 'blockchain', 'connection_pool', and 'gossip_protocol' must be provided"
-			)
+			logger.error('All of \'blockchain\', \'connection_pool\', and \'gossip_protocol\' must be provided')
 
 			raise Exception('Could not start')
 

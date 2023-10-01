@@ -35,6 +35,7 @@ class Block(Schema):
 		block.pop('hash')
 
 		block_string = json.dumps(block, sort_keys=True).encode()
+		
 		block_hash = sha256(block_string).hexdigest()
 
 		if data['hash'] != block_hash:
